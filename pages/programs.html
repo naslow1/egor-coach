@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Программы — Егор Тренер</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/programs.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<div id="nav-root"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content container">
+    <div class="eyebrow">Программы тренировок</div>
+    <h1 class="section-title">Выбери свой <em>путь</em></h1>
+    <p>Детская группа, индивидуалки, турнирная подготовка и план питания — всё в одном месте.</p>
+  </div>
+</section>
+
+<div id="ticker-root"></div>
+
+<!-- PROGRAM TABS NAV -->
+<section class="prog-tabs-section">
+  <div class="container">
+    <div class="prog-tabs" id="progTabs">
+      <button class="prog-tab active" data-target="kids">🥋 Дети</button>
+      <button class="prog-tab" data-target="individual">⚡ Индивидуально</button>
+      <button class="prog-tab" data-target="competition">🏆 Соревнования</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KIDS ════════════════════════════════ -->
+<section class="program-block" id="kids">
+  <div class="container">
+    <div class="prog-grid">
+      <div class="prog-info reveal from-left">
+        <div class="prog-num">01</div>
+        <div class="eyebrow">Для детей 6–16 лет</div>
+        <h2 class="section-title">Детская <em>группа</em></h2>
+        <p>Борьба — это не только приёмы. Это характер, дисциплина, умение проигрывать и вставать. Работаем в группе до 12 человек, чтобы каждый ребёнок получил внимание.</p>
+
+        <div class="prog-features">
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>3 тренировки в неделю по 60–90 минут</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Группа до 12 человек</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Разминка, техника, спарринги, растяжка</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Подготовка и выезд на соревнования</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Отчёты родителям о прогрессе</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Возраст: 6–16 лет, любой уровень</span>
+          </div>
+        </div>
+
+        <div class="prog-price">
+          <div class="price-block">
+            <span class="price-amount">2 500</span>
+            <span class="price-cur">₽</span>
+            <span class="price-per">/месяц</span>
+          </div>
+          <a class="btn btn-primary" href="#" data-modal="modal">Записать ребёнка</a>
+        </div>
+      </div>
+
+      <div class="prog-visual reveal from-right">
+        <div class="prog-photo">
+          <div class="photo-placeholder">
+            <img src="../img/тренировкадети.png" alt="Детская группа">
+          </div>
+        </div>
+        <div class="prog-schedule">
+          <div class="sched-title">Расписание занятий</div>
+          <div class="sched-grid">
+            <div class="sched-day">Понедельник</div><div class="sched-time">18:00 – 19:30</div>
+            <div class="sched-day">Среда</div><div class="sched-time">18:00 – 19:30</div>
+            <div class="sched-day">Пятница</div><div class="sched-time">18:00 – 19:30</div>
+            <div class="sched-day">Суббота</div><div class="sched-time">10:00 – 11:30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDIVIDUAL ══════════════════════════ -->
+<section class="program-block bg-dark" id="individual">
+  <div class="container">
+    <div class="prog-grid reverse">
+      <div class="prog-visual reveal from-left">
+        <div class="prog-photo">
+          <div class="photo-placeholder">
+            <img src="../img/индив.png" alt="индив">
+          </div>
+        </div>
+        <div class="indiv-stats">
+          <div class="indiv-stat">
+            <div class="indiv-num">60</div>
+            <div class="indiv-label">минут<br>сессия</div>
+          </div>
+          <div class="indiv-stat">
+            <div class="indiv-num">1:1</div>
+            <div class="indiv-label">формат<br>работы</div>
+          </div>
+          <div class="indiv-stat">
+            <div class="indiv-num">∞</div>
+            <div class="indiv-label">связь<br>между</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-info reveal from-right">
+        <div class="prog-num">02</div>
+        <div class="eyebrow">Взрослые и подростки</div>
+        <h2 class="section-title">Индивидуально <em>в зале</em></h2>
+        <p>Работаем один на один. Я полностью сфокусирован на тебе: техника, физподготовка, разбор ошибок. Прогресс за месяц, который в группе занял бы год.</p>
+
+        <div class="indiv-plans">
+          <div class="indiv-plan">
+            <div class="plan-name">Одно занятие</div>
+            <div class="plan-price">3 000 ₽</div>
+          </div>
+          <div class="indiv-plan featured">
+            <div class="plan-tag">Выгодно</div>
+            <div class="plan-name">4 занятия</div>
+            <div class="plan-price">10 000 ₽</div>
+            <div class="plan-save">экономия 2 000 ₽</div>
+          </div>
+          <div class="indiv-plan">
+            <div class="plan-name">8 занятий</div>
+            <div class="plan-price">18 000 ₽</div>
+            <div class="plan-save">экономия 6 000 ₽</div>
+          </div>
+        </div>
+
+        <div class="prog-features">
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Разбор техники под твои цели</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Работа с партнёром по схватке</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Видео-разбор твоих движений</span>
+          </div>
+          <div class="prog-feature">
+            <span class="feat-icon">✓</span>
+            <span>Связь в Telegram между занятиями</span>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="#" data-modal="modal">Записаться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPETITION ═════════════════════════ -->
+<section class="program-block" id="competition">
+  <div class="container">
+    <div class="prog-grid">
+      <div class="prog-info reveal from-left">
+        <div class="prog-num">03</div>
+        <div class="eyebrow">Для тех, кто хочет победить</div>
+        <h2 class="section-title">Подготовка к <em>турниру</em></h2>
+        <p>Интенсивный курс перед конкретным соревнованием. Тактика против разных стилей соперников, физическая пиковая форма и психология чемпиона.</p>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-title">Неделя 1–2: Диагностика</div>
+              <div class="tl-desc">Оцениваем текущий уровень, смотрим видео соперников, ставим цель.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-title">Неделя 3–5: Интенсив</div>
+              <div class="tl-desc">Ежедневные тренировки. Техника, физподготовка, спарринги с партнёрами.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-title">Неделя 6: Подводка</div>
+              <div class="tl-desc">Снижаем нагрузку, входим в нужный вес, психологически настраиваемся.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot active"></div>
+            <div>
+              <div class="tl-title">Турнир</div>
+              <div class="tl-desc">Я рядом в день соревнования — как тренер и как поддержка.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-price">
+          <div class="price-block">
+            <span class="price-from">от</span>
+            <span class="price-amount">8 000</span>
+            <span class="price-cur">₽</span>
+            <span class="price-per">/курс</span>
+          </div>
+          <a class="btn btn-primary" href="#" data-modal="modal">Обсудить подготовку</a>
+        </div>
+      </div>
+
+      <div class="prog-visual reveal from-right">
+        <div class="prog-photo">
+          <div class="photo-placeholder">
+            <img src="../img/соревыэ.png" alt="соревы">
+          </div>
+        </div>
+        <div class="comp-results">
+          <div class="cr-title">Результаты учеников</div>
+          <div class="cr-item">
+            <span class="cr-medal gold">🥇</span>
+            <span>Городские соревнования 2024</span>
+          </div>
+          <div class="cr-item">
+            <span class="cr-medal silver">🥈</span>
+            <span>Региональный турнир 2024</span>
+          </div>
+          <div class="cr-item">
+            <span class="cr-medal gold">🥇</span>
+            <span>Открытый кубок Москвы 2023</span>
+          </div>
+          <div class="cr-item">
+            <span class="cr-medal bronze">🥉</span>
+            <span>Первенство района 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="padding: 100px 0;">
+  <div class="cta-glow"></div>
+  <div class="container cta-inner reveal">
+    <div class="eyebrow" style="justify-content:center">Есть вопросы?</div>
+    <h2 class="section-title" style="text-align:center">Не уверен — <em>напиши</em></h2>
+    <p class="cta-sub">Расскажи о своей ситуации — вместе выберем программу, которая подойдёт именно тебе.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="#" data-modal="modal">Записаться</a>
+      <a class="btn btn-outline" href="https://t.me/goga_rus" target="_blank">Telegram →</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<div id="modal-root"></div>
+
+<script type="module">
+  import { NAV_HTML, TICKER_HTML, FOOTER_HTML, MODAL_HTML } from '../js/templates.js';
+  import { initAll, openModal, closeModal, initModalForm } from '../js/utils.js';
+
+  document.getElementById('nav-root').innerHTML    = NAV_HTML('../');
+  document.getElementById('ticker-root').innerHTML = TICKER_HTML;
+  document.getElementById('footer-root').innerHTML = FOOTER_HTML('../');
+  document.getElementById('modal-root').innerHTML  = MODAL_HTML;
+
+  initAll();
+
+  document.querySelector('.modal-close')?.addEventListener('click', () => closeModal());
+  initModalForm('signupForm', `
+    <div class="modal-success">
+      <div class="success-icon">✅</div>
+      <h3>Заявка <em>принята!</em></h3>
+      <p>Егор свяжется с вами в ближайшее время.</p>
+      <button class="modal-submit" onclick="document.getElementById('modal').classList.remove('active');document.body.style.overflow=''">Закрыть</button>
+    </div>
+  `);
+
+  // tabs
+  const tabs = document.querySelectorAll('.prog-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = document.getElementById(tab.dataset.target);
+      if (target) {
+        const offset = target.getBoundingClientRect().top + window.scrollY - 120;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Егор — Тренер по борьбе</title>
+  <meta name="description" content="Персональный тренер по борьбе. Детские группы, индивидуальные тренировки, подготовка к соревнованиям, расчёт КБЖУ.">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div id="nav-root"></div>
+
+<!-- ══ HERO ══════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+
+  <!-- живая кардиограмма -->
+  <div class="hero-beat-wrap">
+    <div class="beat-line" id="heroBeat"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="pulse-dot"></span>
+        Тренер по борьбе · Краснодар
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-top">ПОБЕЖДАЕТ</span>
+        <span class="line-mid"><em>ТОТ</em></span>
+        <span class="line-bot stroke">КТО ГОТОВ</span>
+      </h1>
+
+      <p class="hero-desc">
+        Бывший спортсмен-борец. Тренирую детей и взрослых —<br>
+        от первого захвата до пьедестала.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#" data-modal="modal">
+          Первая тренировка
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a class="btn btn-outline" href="pages/programs.html">Программы</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-inner">
+          <img src="img/тренер.png" alt="🥋 Фото тренера">
+          <div class="photo-placeholder">      
+          </div>
+        </div>
+        <div class="frame-label">
+          <span class="pulse-dot" style="transform:scale(0.7)"></span>
+          Доступен для записи
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- статистика -->
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="stat-num"><span data-count="8" data-suffix="+">0+</span></div>
+      <div class="stat-label">Лет в борьбе</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="stat-num"><span data-count="150" data-suffix="+">0+</span></div>
+      <div class="stat-label">Учеников</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="stat-num"><span data-count="60" data-suffix="+">0+</span></div>
+      <div class="stat-label">Медалей у детей</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="stat-num"><span data-count="1">0</span><span class="accent" style="font-size:0.6em">разряд</span></div>
+      <div class="stat-label">Спортивная квалификация</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-track"></div>
+    <span>Скролл</span>
+  </div>
+</section>
+
+<div id="ticker-root"></div>
+
+<!-- ══ SERVICES PREVIEW ═══════════════════ -->
+<section class="services-preview" id="services">
+  <div class="container">
+    <div class="sp-header">
+      <div>
+        <div class="eyebrow reveal">Что я предлагаю</div>
+        <h2 class="section-title reveal d1">Программы <em>тренировок</em></h2>
+      </div>
+      <a class="btn btn-outline reveal d2" href="pages/programs.html">Все программы →</a>
+    </div>
+
+    <div class="sp-grid">
+      <!-- Дети -->
+      <a href="pages/programs.html#kids" class="sp-card card-hover reveal">
+        <div class="sp-card-num">01</div>
+        <div class="sp-card-icon">🥋</div>
+        <h3>Детская группа</h3>
+        <p>Для детей 6–16 лет. Базовые техники, координация, командный дух. В игровой форме, без жёсткости.</p>
+        <div class="sp-card-footer">
+          <span class="price">от 2 500 <small>₽/мес</small></span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="sp-card-bar"><div class="progress-bar"><div class="progress-fill" style="transform:scaleX(0.6)"></div></div></div>
+      </a>
+
+      <!-- Индивидуально -->
+      <a href="pages/programs.html#individual" class="sp-card sp-card--featured card-hover reveal d1">
+        <div class="sp-badge">Топ выбор</div>
+        <div class="sp-card-num">02</div>
+        <div class="sp-card-icon">⚡</div>
+        <h3>Индивидуально в зале</h3>
+        <p>Персональная сессия. Разбираем технику, ставим стойку, работаем с партнёром. Максимум за 60 минут.</p>
+        <div class="sp-card-footer">
+          <span class="price">3 000 <small>₽/занятие</small></span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="sp-card-bar"><div class="progress-bar" style="background:rgba(0,0,0,0.2)"><div class="progress-fill" style="transform:scaleX(0.9);background:var(--black)"></div></div></div>
+      </a>
+
+      <!-- Соревнования -->
+      <a href="pages/programs.html#competition" class="sp-card card-hover reveal d2">
+        <div class="sp-card-num">03</div>
+        <div class="sp-card-icon">🏆</div>
+        <h3>Подготовка к турниру</h3>
+        <p>Интенсивный курс. Тактика, физика, психология победителя. Готовим к конкретному соревнованию.</p>
+        <div class="sp-card-footer">
+          <span class="price">от 8 000 <small>₽/курс</small></span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="sp-card-bar"><div class="progress-bar"><div class="progress-fill" style="transform:scaleX(0.75)"></div></div></div>
+      </a>
+
+      <!-- Питание -->
+      <a href="pages/nutrition.html" class="sp-card card-hover reveal d3">
+        <div class="sp-card-num">04</div>
+        <div class="sp-card-icon">🥗</div>
+        <h3>КБЖУ + план питания</h3>
+        <p>Расчёт калорий, белков, жиров, углеводов под ваши цели. Персональный рацион на неделю.</p>
+        <div class="sp-card-footer">
+          <span class="price">от 1 500 <small>₽</small></span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="sp-card-bar"><div class="progress-bar"><div class="progress-fill" style="transform:scaleX(0.5)"></div></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT TEASER ═══════════════════════ -->
+<section class="about-teaser">
+  <div class="container">
+    <div class="at-grid">
+      <div class="at-left reveal from-left">
+        <div class="at-photo-wrap">
+          <div class="at-photo">
+            <div class="photo-placeholder dark">
+              <img src="img/тренировкка.png" alt="фото с тренировки">
+            </div>
+          </div>
+          <div class="at-photo-accent"></div>
+          <div class="at-photo-badge">
+            <div class="badge-big">1°</div>
+            <div class="badge-sub">Разряд<br>по борьбе</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="at-right reveal from-right">
+        <div class="eyebrow">О тренере</div>
+        <h2 class="section-title">Привет,<br>я <em>Егор</em></h2>
+        <p>Борьбой занимаюсь с детства. Прошёл путь от новичка до спортсмена <strong>1-го разряда</strong> — с соревнованиями, победами и поражениями, которые сделали меня тем, кто я есть.</p>
+        <p>Сейчас я передаю этот опыт другим. Работаю с детьми в группе и провожу <strong>индивидуальные тренировки</strong> в зале для тех, кто хочет реального результата.</p>
+
+        <div class="at-skills">
+          <div class="at-skill">
+            <div class="at-skill-label">
+              <span>Вольная борьба</span><span>95%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="--tw:0.95"></div></div>
+          </div>
+          <div class="at-skill">
+            <div class="at-skill-label">
+              <span>Работа с детьми</span><span>90%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="--tw:0.90"></div></div>
+          </div>
+          <div class="at-skill">
+            <div class="at-skill-label">
+              <span>Физподготовка</span><span>88%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="--tw:0.88"></div></div>
+          </div>
+          <div class="at-skill">
+            <div class="at-skill-label">
+              <span>Спортивное питание</span><span>80%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="--tw:0.80"></div></div>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="pages/about.html">Подробнее об Егоре →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ════════════════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="eyebrow reveal">Отзывы</div>
+    <h2 class="section-title reveal d1">Что говорят <em>ученики</em></h2>
+
+    <div class="reviews-grid">
+      <div class="review-card card-hover reveal d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Отдали сына к Егору в 8 лет. За полгода — другой ребёнок. Собранный, уверенный. На первых соревнованиях взял серебро!</p>
+        <div class="review-author">
+          <div class="review-avatar">А</div>
+          <div>
+            <div class="review-name">Анна М.</div>
+            <div class="review-role">Мама ученика, 8 лет</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card card-hover reveal d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Индивидуалки с Егором — лучшее, что я делал для своей формы. Объясняет чётко, без воды. Техника выросла в разы.</p>
+        <div class="review-author">
+          <div class="review-avatar">Д</div>
+          <div>
+            <div class="review-name">Дмитрий С.</div>
+            <div class="review-role">Индивидуальные тренировки</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card card-hover reveal d3">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Готовился к турниру месяц. Итог — золото на городских. Егор видит тебя насквозь и знает, что именно нужно прокачать.</p>
+        <div class="review-author">
+          <div class="review-avatar">К</div>
+          <div>
+            <div class="review-name">Кирилл П.</div>
+            <div class="review-role">Подготовка к турниру</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-beat" id="ctaBeat"></div>
+  <div class="container cta-inner reveal">
+    <div class="eyebrow" style="justify-content:center">Готов начать?</div>
+    <h2 class="section-title" style="text-align:center">Запишись на <em>первую</em><br>тренировку</h2>
+    <p class="cta-sub">Первое занятие — знакомство. Смотрю на то, что есть, говорю честно, что и как развивать.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="#" data-modal="modal">Записаться сейчас</a>
+      <a class="btn btn-outline" href="https://t.me/goga_rus" target="_blank">Написать в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<div id="modal-root"></div>
+
+<script type="module">
+  import { NAV_HTML, TICKER_HTML, FOOTER_HTML, MODAL_HTML } from './js/templates.js';
+  import { initAll, drawBeatLine, openModal, closeModal, initModalForm } from './js/utils.js';
+
+  // inject shared parts
+  document.getElementById('nav-root').innerHTML    = NAV_HTML('');
+  document.getElementById('ticker-root').innerHTML = TICKER_HTML;
+  document.getElementById('footer-root').innerHTML = FOOTER_HTML('');
+  document.getElementById('modal-root').innerHTML  = MODAL_HTML;
+
+  // init
+  initAll();
+  drawBeatLine('heroBeat');
+  drawBeatLine('ctaBeat');
+
+  // modal close button (after inject)
+  document.querySelector('.modal-close')?.addEventListener('click', () => closeModal());
+
+  // modal form
+  initModalForm('signupForm', `
+    <div class="modal-success">
+      <div class="success-icon">✅</div>
+      <h3>Заявка <em>принята!</em></h3>
+      <p>Егор свяжется с вами в ближайшее время. До встречи на тренировке!</p>
+      <button class="modal-submit" onclick="document.getElementById('modal').classList.remove('active');document.body.style.overflow=''">Закрыть</button>
+    </div>
+  `);
+
+  // skill bars animate on scroll
+  const skillBars = document.querySelectorAll('.at-skill .progress-fill');
+  const skillObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const tw = e.target.style.getPropertyValue('--tw') || '1';
+        e.target.style.transform = `scaleX(${tw})`;
+        skillObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  skillBars.forEach(b => skillObs.observe(b));
+
+  // card progress bars
+  document.querySelectorAll('.sp-card .progress-fill').forEach(b => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('animate'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    obs.observe(b);
+  });
+</script>
+</body>
+</html>

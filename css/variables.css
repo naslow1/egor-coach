@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════
+   VARIABLES & RESET
+   ═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --black:      #080808;
+  --dark:       #111111;
+  --steel:      #1C1C1C;
+  --card:       #181818;
+  --border:     rgba(255,255,255,0.06);
+  --cream:      #F2EEE8;
+  --white:      #FFFFFF;
+  --amber:      #E8A020;
+  --amber-dim:  #C4841A;
+  --amber-glow: rgba(232,160,32,0.15);
+  --ash:        #888888;
+  --ash-light:  #AAAAAA;
+  --red:        #C0392B;
+  --green:      #27AE60;
+
+  --font-head: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --nav-h: 72px;
+  --max-w: 1280px;
+  --pad-x: 64px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+ul { list-style: none; }
+
+::selection {
+  background: var(--amber);
+  color: var(--black);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--amber); }
+
+@media (max-width: 768px) {
+  :root { --pad-x: 20px; }
+}

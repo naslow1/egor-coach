@@ -1,0 +1,265 @@
+/* ═══════════════════════════════════════
+   NUTRITION PAGE STYLES
+   ═══════════════════════════════════════ */
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.page-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 50% 0%, rgba(232,160,32,0.08) 0%, transparent 60%),
+    var(--black);
+}
+.page-hero-content { position: relative; z-index: 2; }
+.page-hero-content .section-title { margin: 16px 0 20px; font-size: clamp(44px, 6vw, 80px); }
+.page-hero-content p { font-size: 16px; color: var(--ash); font-weight: 300; line-height: 1.7; max-width: 500px; }
+
+/* ── CALCULATOR ── */
+.calc-section {
+  padding: 80px 0 100px;
+  border-top: 1px solid var(--border);
+}
+.calc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+}
+.calc-header .section-title { margin: 16px 0 16px; font-size: clamp(30px, 3vw, 44px); }
+.calc-header > p {
+  font-size: 14px; color: var(--ash); line-height: 1.7;
+  margin-bottom: 36px; font-weight: 300;
+}
+.calc-fields { display: flex; flex-direction: column; gap: 16px; }
+.calc-row.two-col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.form-group label {
+  display: block; font-size: 10px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--ash); margin-bottom: 8px;
+}
+.form-group input,
+.form-group select {
+  width: 100%; background: var(--steel);
+  border: 1px solid var(--border);
+  color: var(--white); padding: 13px 16px;
+  font-family: var(--font-body); font-size: 14px;
+  outline: none; transition: border-color 0.2s;
+}
+.form-group input::placeholder { color: var(--ash); }
+.form-group input:focus,
+.form-group select:focus { border-color: var(--amber); }
+.form-group select option { background: var(--steel); }
+
+.gender-toggle,
+.goal-toggle {
+  display: flex; gap: 2px;
+}
+.gender-btn,
+.goal-btn {
+  flex: 1; padding: 12px;
+  background: var(--steel); border: 1px solid var(--border);
+  color: var(--ash); font-family: var(--font-body);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 1px; cursor: pointer;
+  transition: all 0.2s;
+}
+.gender-btn.active,
+.goal-btn.active {
+  background: var(--amber); color: var(--black);
+  border-color: var(--amber);
+}
+.gender-btn:not(.active):hover,
+.goal-btn:not(.active):hover { border-color: var(--amber); color: var(--amber); }
+.calc-btn { font-size: 13px; }
+
+/* ── RESULT ── */
+.calc-result {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  min-height: 480px;
+  display: flex; align-items: stretch;
+}
+.result-placeholder {
+  width: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px; padding: 40px;
+  color: var(--ash); text-align: center;
+  transition: opacity 0.3s;
+}
+.result-placeholder.hidden { display: none; }
+.placeholder-icon { font-size: 52px; opacity: 0.4; }
+.result-placeholder p { font-size: 14px; line-height: 1.6; }
+
+.result-data { width: 100%; padding: 36px; }
+.result-data.hidden { display: none; }
+
+.result-main {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.result-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--amber);
+  margin-bottom: 8px;
+}
+.result-kcal {
+  font-family: var(--font-head);
+  font-size: 64px; font-weight: 700;
+  color: var(--white); letter-spacing: -2px; line-height: 1;
+}
+.result-kcal small {
+  font-size: 18px; color: var(--ash);
+  font-family: var(--font-body); font-weight: 300;
+  margin-left: 4px;
+}
+
+.macros-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 12px; margin-bottom: 28px;
+}
+.macro-card {
+  background: var(--steel); padding: 16px;
+}
+.macro-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  margin-bottom: 8px;
+}
+.macro-dot.protein { background: #3B82F6; }
+.macro-dot.fat     { background: #F59E0B; }
+.macro-dot.carb    { background: #10B981; }
+
+.macro-val {
+  font-family: var(--font-head);
+  font-size: 32px; font-weight: 700;
+  color: var(--white); line-height: 1;
+  letter-spacing: -1px;
+}
+.macro-g { font-size: 11px; color: var(--ash); margin-bottom: 6px; }
+.macro-name {
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--ash);
+  margin-bottom: 10px;
+}
+.macro-bar {
+  height: 3px; background: rgba(255,255,255,0.08); overflow: hidden;
+}
+.macro-fill {
+  height: 100%; width: 0;
+  transition: width 1s var(--ease-out);
+}
+.protein-fill { background: #3B82F6; }
+.fat-fill     { background: #F59E0B; }
+.carb-fill    { background: #10B981; }
+
+.result-meals { margin-bottom: 24px; }
+.meals-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--ash);
+  margin-bottom: 14px;
+}
+.meals-grid { display: flex; flex-direction: column; gap: 8px; }
+.meal-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; background: var(--steel);
+}
+.meal-name { font-size: 13px; color: var(--ash-light); }
+.meal-kcal { font-size: 13px; font-weight: 600; color: var(--amber); }
+
+.result-cta { border-top: 1px solid var(--border); padding-top: 24px; }
+.result-cta p { font-size: 12px; color: var(--ash); line-height: 1.6; margin-bottom: 14px; }
+
+/* ── INCLUDED ── */
+.nutr-included {
+  padding: 100px 0;
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+}
+.nutr-included .section-title { margin: 16px 0 56px; }
+.included-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px; margin-bottom: 56px;
+}
+.included-card {
+  background: var(--steel); padding: 36px 28px;
+  transition: transform 0.3s; cursor: default;
+  border-bottom: 3px solid transparent;
+}
+.included-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--amber);
+}
+.inc-icon { font-size: 32px; margin-bottom: 16px; }
+.included-card h3 {
+  font-family: var(--font-head);
+  font-size: 18px; font-weight: 600;
+  text-transform: uppercase; color: var(--white);
+  margin-bottom: 10px;
+}
+.included-card p { font-size: 13px; color: var(--ash); line-height: 1.7; }
+
+.nutr-price-block {
+  background: var(--steel);
+  border: 1px solid rgba(232,160,32,0.15);
+  padding: 40px 48px;
+}
+.nutr-price-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 24px;
+}
+.nutr-price-val {
+  font-family: var(--font-head);
+  font-size: 52px; font-weight: 700;
+  color: var(--white); letter-spacing: -2px;
+}
+.nutr-price-val span { color: var(--amber); }
+.nutr-price-note { font-size: 12px; color: var(--ash); margin-top: 4px; }
+
+/* ── TIPS ── */
+.nutr-tips { padding: 100px 0; }
+.nutr-tips .section-title { margin: 16px 0 56px; }
+.tips-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px;
+}
+.tip {
+  background: var(--card); padding: 40px 32px;
+  border-top: 2px solid var(--border);
+  transition: border-color 0.3s;
+}
+.tip:hover { border-color: var(--amber); }
+.tip-num {
+  font-family: var(--font-head);
+  font-size: 48px; font-weight: 700;
+  color: rgba(255,255,255,0.05);
+  line-height: 1; margin-bottom: 16px;
+}
+.tip h4 {
+  font-family: var(--font-head);
+  font-size: 17px; font-weight: 600;
+  text-transform: uppercase; color: var(--white);
+  margin-bottom: 10px; line-height: 1.1;
+}
+.tip p { font-size: 13px; color: var(--ash); line-height: 1.7; }
+
+@media (max-width: 1000px) {
+  .calc-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: 1fr 1fr; }
+  .tips-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .included-grid { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .calc-row.two-col { grid-template-columns: 1fr; }
+  .goal-toggle { flex-wrap: wrap; }
+  .macros-grid { grid-template-columns: 1fr; }
+}

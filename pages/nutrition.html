@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Питание & КБЖУ — Егор Тренер</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/nutrition.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<div id="nav-root"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content container">
+    <div class="eyebrow">Спортивное питание</div>
+    <h1 class="section-title">КБЖУ & план <em>питания</em></h1>
+    <p>Рассчитай свою норму калорий прямо здесь — и получи персональный план от Егора.</p>
+  </div>
+</section>
+
+<!-- KBJU CALCULATOR -->
+<section class="calc-section">
+  <div class="container">
+    <div class="calc-grid">
+
+      <!-- FORM -->
+      <div class="calc-form reveal from-left">
+        <div class="calc-header">
+          <div class="eyebrow">Онлайн калькулятор</div>
+          <h2 class="section-title">Расчёт <em>КБЖУ</em></h2>
+          <p>Введи параметры — получишь норму калорий, белков, жиров и углеводов за секунду.</p>
+        </div>
+
+        <div class="calc-fields">
+          <div class="calc-row">
+            <div class="form-group">
+              <label>Пол</label>
+              <div class="gender-toggle">
+                <button class="gender-btn active" data-gender="male">Мужской</button>
+                <button class="gender-btn" data-gender="female">Женский</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-row two-col">
+            <div class="form-group">
+              <label>Возраст</label>
+              <input type="number" id="calcAge" placeholder="25" min="10" max="80">
+            </div>
+            <div class="form-group">
+              <label>Вес (кг)</label>
+              <input type="number" id="calcWeight" placeholder="75" min="30" max="200">
+            </div>
+          </div>
+
+          <div class="calc-row two-col">
+            <div class="form-group">
+              <label>Рост (см)</label>
+              <input type="number" id="calcHeight" placeholder="175" min="130" max="230">
+            </div>
+            <div class="form-group">
+              <label>Активность</label>
+              <select id="calcActivity">
+                <option value="1.2">Минимальная (офис, без спорта)</option>
+                <option value="1.375">Лёгкая (1–2 трени в неделю)</option>
+                <option value="1.55" selected>Средняя (3–5 тренировок)</option>
+                <option value="1.725">Высокая (6–7 тренировок)</option>
+                <option value="1.9">Экстремальная (2 раза в день)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Цель</label>
+            <div class="goal-toggle">
+              <button class="goal-btn" data-goal="-0.2">Похудение</button>
+              <button class="goal-btn active" data-goal="0">Поддержание</button>
+              <button class="goal-btn" data-goal="0.15">Набор массы</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary calc-btn" id="calcBtn" style="width:100%;justify-content:center;margin-top:8px;">
+            Рассчитать КБЖУ →
+          </button>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="calc-result reveal from-right" id="calcResult">
+        <div class="result-placeholder" id="resultPlaceholder">
+          <div class="placeholder-icon">🥗</div>
+          <p>Введи параметры слева<br>и нажми «Рассчитать»</p>
+        </div>
+
+        <div class="result-data hidden" id="resultData">
+          <div class="result-main">
+            <div class="result-label">Дневная норма калорий</div>
+            <div class="result-kcal"><span id="resKcal">—</span> <small>ккал</small></div>
+          </div>
+
+          <div class="macros-grid">
+            <div class="macro-card">
+              <div class="macro-dot protein"></div>
+              <div class="macro-val" id="resProtein">—</div>
+              <div class="macro-g">г</div>
+              <div class="macro-name">Белки</div>
+              <div class="macro-bar"><div class="macro-fill protein-fill" id="proteinBar"></div></div>
+            </div>
+            <div class="macro-card">
+              <div class="macro-dot fat"></div>
+              <div class="macro-val" id="resFat">—</div>
+              <div class="macro-g">г</div>
+              <div class="macro-name">Жиры</div>
+              <div class="macro-bar"><div class="macro-fill fat-fill" id="fatBar"></div></div>
+            </div>
+            <div class="macro-card">
+              <div class="macro-dot carb"></div>
+              <div class="macro-val" id="resCarb">—</div>
+              <div class="macro-g">г</div>
+              <div class="macro-name">Углеводы</div>
+              <div class="macro-bar"><div class="macro-fill carb-fill" id="carbBar"></div></div>
+            </div>
+          </div>
+
+          <div class="result-meals" id="resMeals">
+            <div class="meals-title">Примерное распределение по приёмам</div>
+            <div class="meals-grid" id="mealsGrid"></div>
+          </div>
+
+          <div class="result-cta">
+            <p>Это базовый расчёт. Для персонального плана питания под борьбу — свяжись с Егором.</p>
+            <a class="btn btn-primary" href="#" data-modal="modal" style="width:100%;justify-content:center;">
+              Получить план питания →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="nutr-included">
+  <div class="container">
+    <div class="eyebrow reveal">Что входит</div>
+    <h2 class="section-title reveal d1">Персональный план <em>питания</em></h2>
+
+    <div class="included-grid">
+      <div class="included-card reveal d1">
+        <div class="inc-icon">📊</div>
+        <h3>Расчёт КБЖУ</h3>
+        <p>Точный расчёт нормы калорий, белков, жиров и углеводов под твои параметры и цель.</p>
+      </div>
+      <div class="included-card reveal d2">
+        <div class="inc-icon">🗓</div>
+        <h3>Меню на 7 дней</h3>
+        <p>Готовое расписание питания на неделю с конкретными блюдами и граммовками.</p>
+      </div>
+      <div class="included-card reveal d3">
+        <div class="inc-icon">⚖️</div>
+        <h3>Весовая категория</h3>
+        <p>Если готовишься к турниру — помогу войти в нужную весовую категорию безопасно.</p>
+      </div>
+      <div class="included-card reveal d4">
+        <div class="inc-icon">💊</div>
+        <h3>Спортпит</h3>
+        <p>Рекомендации по протеину, гейнеру, витаминам — без лишнего и дорогого.</p>
+      </div>
+    </div>
+
+    <div class="nutr-price-block reveal">
+      <div class="nutr-price-inner">
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px">Стоимость</div>
+          <div class="nutr-price-val">от 1 500 <span>₽</span></div>
+          <div class="nutr-price-note">Зависит от объёма и сроков</div>
+        </div>
+        <a class="btn btn-primary" href="#" data-modal="modal">Заказать план питания</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="nutr-tips">
+  <div class="container">
+    <div class="eyebrow reveal">Советы Егора</div>
+    <h2 class="section-title reveal d1">Базовые <em>правила</em></h2>
+
+    <div class="tips-grid">
+      <div class="tip reveal d1">
+        <div class="tip-num">01</div>
+        <h4>Белок в каждом приёме пищи</h4>
+        <p>Минимум 1.8–2.2 г белка на кг веса в день. Для борца это фундамент — мышцы восстанавливаются и растут.</p>
+      </div>
+      <div class="tip reveal d2">
+        <div class="tip-num">02</div>
+        <h4>Углеводы — до тренировки</h4>
+        <p>За 1.5–2 часа до занятия едим сложные углеводы: гречка, рис, овсянка. Энергия для схватки.</p>
+      </div>
+      <div class="tip reveal d3">
+        <div class="tip-num">03</div>
+        <h4>Белок — после тренировки</h4>
+        <p>В течение 30–40 минут после занятия — 30–40 г белка. Куриная грудь, творог, или протеин.</p>
+      </div>
+      <div class="tip reveal d4">
+        <div class="tip-num">04</div>
+        <h4>Вода — 30–40 мл на кг</h4>
+        <p>Обезвоживание снижает силу и реакцию. В дни тренировок пей больше, особенно если гонишь вес.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<div id="modal-root"></div>
+
+<script type="module">
+  import { NAV_HTML, TICKER_HTML, FOOTER_HTML, MODAL_HTML } from '../js/templates.js';
+  import { initAll, openModal, closeModal, initModalForm } from '../js/utils.js';
+
+  document.getElementById('nav-root').innerHTML    = NAV_HTML('../');
+  document.getElementById('footer-root').innerHTML = FOOTER_HTML('../');
+  document.getElementById('modal-root').innerHTML  = MODAL_HTML;
+  initAll();
+  document.querySelector('.modal-close')?.addEventListener('click', () => closeModal());
+  initModalForm('signupForm', `
+    <div class="modal-success">
+      <div class="success-icon">✅</div>
+      <h3>Заявка <em>принята!</em></h3>
+      <p>Егор свяжется с вами в ближайшее время.</p>
+      <button class="modal-submit" onclick="document.getElementById('modal').classList.remove('active');document.body.style.overflow=''">Закрыть</button>
+    </div>
+  `);
+
+  // Gender toggle
+  let gender = 'male';
+  document.querySelectorAll('.gender-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      gender = btn.dataset.gender;
+    });
+  });
+
+  // Goal toggle
+  let goalMod = 0;
+  document.querySelectorAll('.goal-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.goal-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      goalMod = parseFloat(btn.dataset.goal);
+    });
+  });
+
+  // Calculator
+  document.getElementById('calcBtn').addEventListener('click', () => {
+    const age      = parseFloat(document.getElementById('calcAge').value);
+    const weight   = parseFloat(document.getElementById('calcWeight').value);
+    const height   = parseFloat(document.getElementById('calcHeight').value);
+    const activity = parseFloat(document.getElementById('calcActivity').value);
+
+    if (!age || !weight || !height) {
+      alert('Заполни все поля'); return;
+    }
+
+    // Mifflin-St Jeor
+    let bmr;
+    if (gender === 'male') {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+    const tdee = Math.round(bmr * activity * (1 + goalMod));
+
+    const protein = Math.round(weight * 2.0);
+    const fat     = Math.round(weight * 1.1);
+    const carb    = Math.round((tdee - protein * 4 - fat * 9) / 4);
+
+    // animate values
+    const animate = (el, val, suffix = '') => {
+      let start = 0;
+      const step = () => {
+        start += Math.ceil(val / 30);
+        if (start >= val) { el.textContent = val + suffix; return; }
+        el.textContent = start + suffix;
+        requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    document.getElementById('resKcal').textContent    = '—';
+    document.getElementById('resProtein').textContent = '—';
+    document.getElementById('resFat').textContent     = '—';
+    document.getElementById('resCarb').textContent    = '—';
+
+    document.getElementById('resultPlaceholder').classList.add('hidden');
+    document.getElementById('resultData').classList.remove('hidden');
+
+    setTimeout(() => {
+      animate(document.getElementById('resKcal'),    tdee);
+      animate(document.getElementById('resProtein'), protein);
+      animate(document.getElementById('resFat'),     fat);
+      animate(document.getElementById('resCarb'),    carb);
+
+      // bars
+      const total = protein * 4 + fat * 9 + carb * 4;
+      document.getElementById('proteinBar').style.width = ((protein * 4 / total) * 100) + '%';
+      document.getElementById('fatBar').style.width     = ((fat * 9 / total) * 100) + '%';
+      document.getElementById('carbBar').style.width    = ((carb * 4 / total) * 100) + '%';
+    }, 100);
+
+    // meals
+    const meals = [
+      { name: 'Завтрак', pct: 0.25 },
+      { name: 'Обед', pct: 0.35 },
+      { name: 'Перекус', pct: 0.1 },
+      { name: 'Ужин', pct: 0.3 },
+    ];
+    document.getElementById('mealsGrid').innerHTML = meals.map(m => `
+      <div class="meal-row">
+        <span class="meal-name">${m.name}</span>
+        <span class="meal-kcal">${Math.round(tdee * m.pct)} ккал</span>
+      </div>
+    `).join('');
+  });
+</script>
+</body>
+</html>
