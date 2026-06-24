@@ -2,58 +2,44 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Контакты — Егор Тренер</title>
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/nutrition.css"> </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Контакты</title>
+</head>
 <body>
 
-<div id="nav-root"></div>
+<nav class="navbar">
+  <div class="logo">ЕГОР.</div>
+  <div class="nav-toggle">☰</div>
+  <ul class="nav-links">
+    <li><a href="../index.html" style="color:white; text-decoration:none;">Главная</a></li>
+    <li><a href="contact.html" style="color:white; text-decoration:none;">Контакты</a></li>
+  </ul>
+</nav>
 
 <section class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-content container">
-    <div class="eyebrow">Связь</div>
-    <h1 class="section-title">Давай <em>начнем</em></h1>
-    <p>Готов ответить на вопросы, записать на тренировку или обсудить детали сотрудничества.</p>
+  <div class="container">
+    <h1>Давай <em>начнем</em></h1>
   </div>
 </section>
 
-<section class="calc-section">
-  <div class="container">
-    <div class="calc-grid"> <div class="calc-form">
-        <h2 class="section-title">Как <em>найти</em> меня</h2>
-        <p style="color: var(--ash); margin-bottom: 30px;">Работаю в зале в центре города. Также всегда на связи в мессенджерах по любым вопросам.</p>
-        
-        <div class="contact-links" style="display: flex; flex-direction: column; gap: 12px;">
-          <a href="https://t.me/goga_rus" class="macro-card" style="display:block; text-decoration:none;">
-            <h3 style="font-size:12px; color:var(--amber); margin-bottom:4px;">TELEGRAM</h3>
-            <span style="color:var(--white); font-weight:600;">@goga_rus</span>
-          </a>
-          <a href="tel:+79990000000" class="macro-card" style="display:block; text-decoration:none;">
-            <h3 style="font-size:12px; color:var(--amber); margin-bottom:4px;">ТЕЛЕФОН</h3>
-            <span style="color:var(--white); font-weight:600;">+7 (999) 000-00-00</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="calc-result">
-        <div class="result-placeholder">
-          <div class="placeholder-icon">📍</div>
-          <p>Карта зала<br>Краснодар, ул. Спортивная, 1</p>
-        </div>
-      </div>
-
+<section class="container">
+  <div class="content-grid">
+    <div class="info-block">
+      <h2>Как найти меня</h2>
+      <p>Тут текст контактов...</p>
+    </div>
+    <div class="map-block" style="background: #222; min-height: 300px;">
+      Карта
     </div>
   </div>
 </section>
 
-<div id="footer-root"></div>
-
-<script type="module">
-  import { NAV_HTML, FOOTER_HTML } from '../js/templates.js';
-  document.getElementById('nav-root').innerHTML = NAV_HTML('../');
-  document.getElementById('footer-root').innerHTML = FOOTER_HTML('../');
+<script>
+  // Логика бургера
+  document.querySelector('.nav-toggle').onclick = () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+  };
 </script>
 </body>
 </html>
