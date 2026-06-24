@@ -1,33 +1,36 @@
-:root {
-  --black: #000; --white: #fff; --amber: #e8a020; --steel: #1a1a1a; --ash: #888;
-  --nav-h: 80px;
+/* ═══════════════════════════════════════
+   CONTACT PAGE STYLES
+   ═══════════════════════════════════════ */
+
+.contact-hero {
+  padding-top: calc(var(--nav-h) + 100px);
+  padding-bottom: 100px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: sans-serif; background: var(--black); color: var(--white); }
-
-/* НАВИГАЦИЯ */
-.navbar {
-  height: var(--nav-h); display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; border-bottom: 1px solid #333; position: relative;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 50px 0;
 }
-.nav-links { display: flex; gap: 30px; list-style: none; }
-.nav-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-/* АДАПТИВНОЕ МЕНЮ */
+.contact-info h2 {
+  font-family: var(--font-head);
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.contact-info p {
+  color: var(--ash);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Адаптив для блоков */
 @media (max-width: 900px) {
-  .nav-toggle { display: block; }
-  .nav-links {
-    display: none; position: absolute; top: var(--nav-h); left: 0; width: 100%;
-    background: var(--black); flex-direction: column; padding: 20px; border-bottom: 2px solid var(--amber);
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-  .nav-links.active { display: flex; }
 }
-
-/* СЕТКА СТРАНИЦ */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.page-hero { padding: 100px 0; }
-.content-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 50px 0;
-}
-@media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } }
