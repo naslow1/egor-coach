@@ -4,33 +4,339 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — Егор Тренер</title>
-  
-  <!-- ВОТ ЭТИ ТРИ СТРОКИ ОБЯЗАТЕЛЬНЫ ДЛЯ ВСЕХ СТРАНИЦ -->
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
 
+<div class="cursor-glow" id="cursorGlow"></div>
 <div id="nav-root"></div>
 
-<!-- Твой контент -->
-<section class="page-hero">
-    <div class="container">
-        <h1>Контакты</h1>
+<!-- ══ HERO ══════════════════════════════ -->
+<section class="contact-hero">
+  <div class="ch-bg"></div>
+  <div class="ch-grid-lines"></div>
+
+  <div class="container ch-inner">
+    <div class="ch-left">
+      <div class="eyebrow">Связь</div>
+      <h1 class="section-title">Напиши<br>мне <em>сейчас</em></h1>
+      <p>Первая тренировка, вопрос по программе, расчёт питания — пиши по любому поводу. Отвечаю быстро.</p>
+
+      <div class="contact-channels">
+        <a class="channel-card" href="https://t.me/goga_rus" target="_blank">
+          <div class="ch-icon tg">✈</div>
+          <div class="ch-info">
+            <div class="ch-name">Telegram</div>
+            <div class="ch-handle">@goga_rus</div>
+          </div>
+          <div class="ch-arrow">→</div>
+        </a>
+
+        <a class="channel-card" href="https://instagram.com/goga_rus" target="_blank">
+          <div class="ch-icon ig">◈</div>
+          <div class="ch-info">
+            <div class="ch-name">Instagram</div>
+            <div class="ch-handle">@goga_rus</div>
+          </div>
+          <div class="ch-arrow">→</div>
+        </a>
+
+        <a class="channel-card" href="https://vk.com/goga_rus" target="_blank">
+          <div class="ch-icon vk">V</div>
+          <div class="ch-info">
+            <div class="ch-name">ВКонтакте</div>
+            <div class="ch-handle">vk.com/goga_rus</div>
+          </div>
+          <div class="ch-arrow">→</div>
+        </a>
+
+        <a class="channel-card" href="tel:+79000000000">
+          <div class="ch-icon ph">☎</div>
+          <div class="ch-info">
+            <div class="ch-name">Телефон</div>
+            <div class="ch-handle">+7 (900) 000-00-00</div>
+          </div>
+          <div class="ch-arrow">→</div>
+        </a>
+      </div>
+
+      <div class="working-hours">
+        <div class="wh-label">Часы работы</div>
+        <div class="wh-row">
+          <span>Пн — Пт</span><span class="wh-time">09:00 – 21:00</span>
+        </div>
+        <div class="wh-row">
+          <span>Суббота</span><span class="wh-time">09:00 – 16:00</span>
+        </div>
+        <div class="wh-row">
+          <span>Воскресенье</span><span class="wh-time wh-off">Выходной</span>
+        </div>
+      </div>
     </div>
+
+    <div class="ch-right">
+      <div class="contact-form-wrap">
+        <div class="form-header">
+          <div class="form-status">
+            <span class="pulse-dot" style="transform:scale(0.7)"></span>
+            Принимаю заявки
+          </div>
+          <h2>Оставь заявку</h2>
+          <p>Свяжусь в течение нескольких часов</p>
+        </div>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Как тебя зовут</label>
+            <input type="text" name="name" placeholder="Иван Иванов" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Телефон</label>
+              <input type="tel" name="phone" placeholder="+7 900 000-00-00">
+            </div>
+            <div class="form-group">
+              <label>Telegram / ВК</label>
+              <input type="text" name="messenger" placeholder="@username">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Интересует</label>
+            <div class="interest-grid" id="interestGrid">
+              <button type="button" class="interest-btn" data-val="kids">🥋 Детская группа</button>
+              <button type="button" class="interest-btn" data-val="individual">⚡ Индивидуально</button>
+              <button type="button" class="interest-btn" data-val="competition">🏆 Соревнования</button>
+              <button type="button" class="interest-btn" data-val="nutrition">🥗 План питания</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Расскажи о себе</label>
+            <textarea name="about" rows="4" placeholder="Возраст, цели, уровень подготовки, вопросы..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">
+            <span>Отправить заявку</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="form-success hidden" id="formSuccess">
+          <div class="success-anim">
+            <div class="success-circle">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <path class="checkmark" d="M8 18l7 7 13-13" stroke="#E8A020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Заявка <em>отправлена!</em></h3>
+          <p>Егор получил твоё сообщение и свяжется в ближайшее время. До встречи на тренировке!</p>
+          <button class="btn btn-outline" onclick="resetForm()">Отправить ещё</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MAP / LOCATION ════════════════════ -->
+<section class="location-section">
+  <div class="container">
+    <div class="loc-header">
+      <div>
+        <div class="eyebrow reveal">Где тренируемся</div>
+        <h2 class="section-title reveal d1">Зал и <em>локация</em></h2>
+      </div>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc-info reveal from-left">
+        <div class="loc-card">
+          <div class="loc-icon">📍</div>
+          <div>
+            <div class="loc-title">Адрес зала</div>
+            <div class="loc-addr">г. Краснодар, ул. Спортивная, д. 15<br>Спортивный комплекс «Арена»</div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">🚇</div>
+          <div>
+            <div class="loc-title">Метро</div>
+            <div class="loc-addr">Спортивная — 5 минут пешком<br>Лужники — 10 минут</div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">🅿️</div>
+          <div>
+            <div class="loc-title">Парковка</div>
+            <div class="loc-addr">Бесплатная парковка во дворе<br>комплекса, въезд с ул. Спортивной</div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">⏰</div>
+          <div>
+            <div class="loc-title">Зал открыт</div>
+            <div class="loc-addr">Пн–Пт: 08:00 – 22:00<br>Сб: 09:00 – 18:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-map reveal from-right">
+        <div class="map-placeholder">
+          <div class="map-pin">
+            <div class="map-pin-dot"></div>
+            <div class="map-pin-ring"></div>
+            <div class="map-pin-ring ring2"></div>
+          </div>
+          <div class="map-label">
+            <strong>Спортивный зал «Арена»</strong>
+            <span>г. Москва, ул. Спортивная, 15</span>
+          </div>
+          <!-- заменить на iframe с реальной картой -->
+          <div class="map-overlay-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="eyebrow reveal">Частые вопросы</div>
+    <h2 class="section-title reveal d1">Вопрос — <em>ответ</em></h2>
+
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>С какого возраста можно отдать ребёнка на борьбу?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Беру детей с 6 лет. В этом возрасте уже хорошо формируются координация и базовые двигательные паттерны. До 6 лет рекомендую общую физподготовку или гимнастику.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Нужна ли специальная форма и экипировка?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>На первую тренировку приходи в любой удобной спортивной одежде. Потом — борцовское трико или специальная форма. Борцовки желательны, но первое время можно без них. Список всего необходимого скину перед началом.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Как проходит первое занятие?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Первое занятие — знакомство. Смотрю на физическую форму, координацию, реакцию. Даю базовые упражнения, показываю стойку, первые движения. В конце честно говорю, что вижу и что с этим делать.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Можно ли заниматься без цели выступать на соревнованиях?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Конечно. Многие занимаются ради физподготовки, уверенности в себе, умения постоять за себя или просто потому что нравится. Соревнования — не обязательная часть. Это твой выбор.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Как получить план питания?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Пишешь мне в Telegram или оставляешь заявку. Я уточняю параметры, цели и пожелания — и в течение 2–3 дней готовлю персональный план с расчётом КБЖУ и меню на неделю.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Как оплачивается тренировка?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Переводом на карту или наличными. Оплата помесячно (детская группа) или перед занятием / пакетом (индивидуалки). Никаких скрытых платежей.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOTTOM CTA ═════════════════════════ -->
+<section class="bottom-cta">
+  <div class="bct-inner">
+    <div class="bct-left reveal from-left">
+      <div class="eyebrow">Не тяни</div>
+      <h2 class="section-title">Первый шаг<br>за <em>тобой</em></h2>
+    </div>
+    <div class="bct-right reveal from-right">
+      <p>Напиши прямо сейчас — это бесплатно и ни к чему не обязывает. Просто поговорим.</p>
+      <div class="bct-btns">
+        <a class="btn btn-primary" href="https://t.me/goga_rus" target="_blank">
+          Написать в Telegram
+        </a>
+        <a class="btn btn-outline" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+          Заполнить форму ↑
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div id="footer-root"></div>
 
-<!-- Подключение JS -->
 <script type="module">
   import { NAV_HTML, FOOTER_HTML } from '../js/templates.js';
   import { initAll } from '../js/utils.js';
 
-  document.getElementById('nav-root').innerHTML = NAV_HTML('../');
+  document.getElementById('nav-root').innerHTML    = NAV_HTML('../');
   document.getElementById('footer-root').innerHTML = FOOTER_HTML('../');
   initAll();
+
+  // interest buttons
+  document.querySelectorAll('.interest-btn').forEach(btn => {
+    btn.addEventListener('click', () => btn.classList.toggle('active'));
+  });
+
+  // form submit
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('contactForm').classList.add('hidden');
+    document.getElementById('formSuccess').classList.remove('hidden');
+  });
+
+  // faq accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+<script>
+  function resetForm() {
+    document.getElementById('contactForm').classList.remove('hidden');
+    document.getElementById('formSuccess').classList.add('hidden');
+    document.getElementById('contactForm').reset();
+    document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('active'));
+  }
 </script>
 </body>
 </html>
