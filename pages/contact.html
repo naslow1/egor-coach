@@ -3,19 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Егор Тренер</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/contact.css">
-  <title>Контакты</title>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="logo">ЕГОР.</div>
-  <div class="nav-toggle">☰</div>
-  <ul class="nav-links">
-    <li><a href="../index.html" style="color:white; text-decoration:none;">Главная</a></li>
-    <li><a href="contact.html" style="color:white; text-decoration:none;">Контакты</a></li>
-  </ul>
-</nav>
+<div id="nav-root"></div>
 
 <section class="page-hero">
   <div class="container">
@@ -24,22 +19,26 @@
 </section>
 
 <section class="container">
-  <div class="content-grid">
+  <div class="contact-grid">
     <div class="info-block">
       <h2>Как найти меня</h2>
-      <p>Тут текст контактов...</p>
+      <p>Текст контактов...</p>
     </div>
-    <div class="map-block" style="background: #222; min-height: 300px;">
+    <div class="map-block">
       Карта
     </div>
   </div>
 </section>
 
-<script>
-  // Логика бургера
-  document.querySelector('.nav-toggle').onclick = () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-  };
+<div id="footer-root"></div>
+
+<script type="module">
+  import { NAV_HTML, FOOTER_HTML } from '../js/templates.js';
+  import { initAll } from '../js/utils.js';
+
+  document.getElementById('nav-root').innerHTML = NAV_HTML('../');
+  document.getElementById('footer-root').innerHTML = FOOTER_HTML('../');
+  initAll();
 </script>
 </body>
 </html>
